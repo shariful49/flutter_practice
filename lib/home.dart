@@ -78,7 +78,7 @@ class Home extends StatelessWidget{
             leading: Text('Calculator', style: TextStyle(fontSize: 20)),
             tileColor: Colors.lightBlueAccent,
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Calculator()));
+              Navigator.pushNamed(context, 'https://shariful49.github.io/flutter_practice/calculator');
             },
           ),
         ],

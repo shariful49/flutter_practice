@@ -22,7 +22,7 @@ class _SumAppState extends State<SumApp> {
       setState(() {
         formValue.update(key, (value) => double.parse(fValue));
       });
-      print(formValue['num1']);
+      //print(formValue['num1']);
     }
     
     return Scaffold(
@@ -78,6 +78,7 @@ class _SumAppState extends State<SumApp> {
             ),
             SizedBox(height: 20,),
             Center(child: Text('Summation = $sum', style: appTextStyle(),)),
+            
           ],
         ),
       ),

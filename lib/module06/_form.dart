@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import '../module06.dart';
+import '../style.dart';
 
-class Form_ extends StatelessWidget {
-  Form_({super.key});
+class Form_ extends StatefulWidget {
+  const Form_({super.key});
+
+  @override
+  State<Form_> createState() => _Form_State();
+}
+
+class _Form_State extends State<Form_> {
+  Map<String, String> _inputValue = {'firstName':'', 'lastName':'', 'email':'', 'contactNumber':''};
+  String fName = '';
+  String lName = '';
+  String email = '';
+  String cNumber = '';
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +23,13 @@ class Form_ extends StatelessWidget {
       foregroundColor: Colors.white,
       backgroundColor: Colors.blueAccent
     );
+
+    inputValue(key, formValue){
+      setState(() {
+        formValue.update(key, (value) => double.parse(formValue));
+      });
+      print(formValue['num1']);
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -34,6 +53,12 @@ class Form_ extends StatelessWidget {
                 labelText: 'First Name',
                 border: OutlineInputBorder(),
               ),
+              onChanged: (value){
+                inputValue('firstName', value);
+                setState(() {
+                  fName = value;
+                });
+              },
             ),
           ),
           Padding(
@@ -43,6 +68,12 @@ class Form_ extends StatelessWidget {
                 labelText: 'Last Name',
                 border: OutlineInputBorder(),
               ),
+              onChanged: (value){
+                inputValue('lastName', value);
+                setState(() {
+                  lName = value;
+                });
+              },
             ),
           ),
           Padding(
@@ -54,6 +85,12 @@ class Form_ extends StatelessWidget {
           
                 )
               ),
+              onChanged: (value){
+                inputValue('email', value);
+                setState(() {
+                  email = value;
+                });
+              },
             ),
           ),
           Padding(
@@ -65,18 +102,28 @@ class Form_ extends StatelessWidget {
           
                 )
               ),
+              onChanged: (value){
+                inputValue('contactNumber', value);
+                setState(() {
+                  cNumber = value;
+                });
+              },
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(20),
             child: ElevatedButton(
-                  onPressed: (){
-              
-                  },
-                  child: Text('Submit', style: TextStyle(fontSize: 20),), 
-                  style: elevatedButtonStyle,               
-                ),
+              onPressed: (){
+                
+              },
+              child: Text('Submit', style: TextStyle(fontSize: 20),), 
+              style: elevatedButtonStyle,               
+            ),
           ),
+          Center(child: Text('Your First Name $fName', style: appTextStyle(),)),
+          Center(child: Text('Your Last Name $lName', style: appTextStyle(),)),
+          Center(child: Text('Your Email $email', style: appTextStyle(),)),
+          Center(child: Text('Your Contact Number $cNumber', style: appTextStyle(),)),
         ],
       ),
     );
