@@ -23,14 +23,14 @@ class Module08 extends StatelessWidget {
       body: Column(
         children: [
           ListTile(
-            title: Text('Todo App', style: TextStyle(fontSize: 25),),
+            title: Text('Todo App', style: TextStyle(fontSize: 20),),
             tileColor: Colors.lightBlueAccent,
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => TodoApp()));
             }
           ),
           ListTile(
-            title: Text('API Introduction', style: TextStyle(fontSize: 25),),
+            title: Text('API Introduction', style: TextStyle(fontSize: 20),),
             tileColor: Colors.amber,
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => ApiIntro()));
