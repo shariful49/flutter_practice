@@ -26,9 +26,9 @@ class _Form_State extends State<Form_> {
 
     inputValue(key, formValue){
       setState(() {
-        formValue.update(key, (value) => double.parse(formValue));
+        _inputValue.update(key, (value) => formValue);
       });
-      print(formValue['num1']);
+      
     }
 
     return Scaffold(
